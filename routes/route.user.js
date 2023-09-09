@@ -12,6 +12,7 @@ const { education, editEducation, singleEducation, allEducation, userEducation, 
 const { editLanguage, language, singleLanguage, allLanguage, userLanguage, deleteLanguage } = require('../controller/controller.language');
 const { editReference, reference, allReference, userReference, deleteReference, singleReference } = require('../controller/controller.reference');
 const { editSkill, skill, singleSkill, allSkill, userSkill, deleteSkill } = require('../controller/controller.skill');
+const { deleteWork, userWork, allWork, singleWork, work, editWork } = require('../controller/controller.work');
 
 /**
  * auth routes
@@ -64,6 +65,14 @@ router.get('/skill/:id', singleSkill);
 router.get('/skill/all', allSkill);
 router.get('/skill/user/:id', userSkill);
 router.delete('/skill/deletes', deleteSkill);
+
+//Work
+router.put('/work/edit', editWork);
+router.post('/work', work);
+router.get('/work/:id', singleWork);
+router.get('/work/all', allWork);
+router.get('/work/user/:id', userWork);
+router.delete('/work/deletes', deleteWork);
 
 /**
  * Export lastly
