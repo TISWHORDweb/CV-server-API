@@ -10,6 +10,7 @@ const {  userSettings, singleUser, deleteUser,userHomeData, audit, singleAudit, 
 const { editCertificates, certificate, singleCertificate, allCertificate, userCertificate, deleteCertificate } = require('../controller/controller.certificate');
 const { education, editEducation, singleEducation, allEducation, userEducation, deleteEducation } = require('../controller/controller.education');
 const { editLanguage, language, singleLanguage, allLanguage, userLanguage, deleteLanguage } = require('../controller/controller.language');
+const { editReference, reference, allReference, userReference, deleteReference } = require('../controller/controller.reference');
 
 /**
  * auth routes
@@ -46,6 +47,14 @@ router.get('/language/:id', singleLanguage);
 router.get('/language/all', allLanguage);
 router.get('/language/user/:id', userLanguage);
 router.delete('/language/deletes', deleteLanguage);
+
+//References
+router.put('/reference/edit', editReference);
+router.post('/reference', reference);
+router.get('/reference/:id', singleLanguage);
+router.get('/reference/all', allReference);
+router.get('/reference/user/:id', userReference);
+router.delete('/reference/deletes', deleteReference);
 
 /**
  * Export lastly
