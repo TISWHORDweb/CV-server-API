@@ -10,7 +10,8 @@ const {  userSettings, singleUser, deleteUser,userHomeData, audit, singleAudit, 
 const { editCertificates, certificate, singleCertificate, allCertificate, userCertificate, deleteCertificate } = require('../controller/controller.certificate');
 const { education, editEducation, singleEducation, allEducation, userEducation, deleteEducation } = require('../controller/controller.education');
 const { editLanguage, language, singleLanguage, allLanguage, userLanguage, deleteLanguage } = require('../controller/controller.language');
-const { editReference, reference, allReference, userReference, deleteReference } = require('../controller/controller.reference');
+const { editReference, reference, allReference, userReference, deleteReference, singleReference } = require('../controller/controller.reference');
+const { editSkill, skill, singleSkill, allSkill, userSkill, deleteSkill } = require('../controller/controller.skill');
 
 /**
  * auth routes
@@ -51,10 +52,18 @@ router.delete('/language/deletes', deleteLanguage);
 //References
 router.put('/reference/edit', editReference);
 router.post('/reference', reference);
-router.get('/reference/:id', singleLanguage);
+router.get('/reference/:id', singleReference);
 router.get('/reference/all', allReference);
 router.get('/reference/user/:id', userReference);
 router.delete('/reference/deletes', deleteReference);
+
+//Skill
+router.put('/skill/edit', editSkill);
+router.post('/skill', skill);
+router.get('/skill/:id', singleSkill);
+router.get('/skill/all', allSkill);
+router.get('/skill/user/:id', userSkill);
+router.delete('/skill/deletes', deleteSkill);
 
 /**
  * Export lastly
