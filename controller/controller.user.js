@@ -14,11 +14,6 @@ dotenv.config()
 const request = require('request');
 const { useAsync, utils, errorHandle, } = require('./../core');
 const ModelPerson = require('../models/model.person')
-// const MindCastAudit = require('../models/model.audit')
-// const MindCastInterest = require('../models/model.interest');
-// const MindCastUserInterest = require('../models/model.userInterest');
-// const MindCastResource = require('../models/model.resources')
-// const MindCastRecommend= require('../models/model.recommend');
 
 
 
