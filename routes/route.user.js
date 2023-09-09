@@ -21,7 +21,6 @@ const { deleteWork, userWork, allWork, singleWork, work, editWork } = require('.
 router.put('/setting/:id', userSettings);
 router.get('/single/:id', singleUser);
 router.get('/users', allUser);
-router.get('/user/home/:id', userHomeData);
 router.post('/change/password', changePassword);
 router.delete('/delete', deleteUser);
 

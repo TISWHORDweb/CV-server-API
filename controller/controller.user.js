@@ -73,72 +73,6 @@ exports.userSettings = useAsync(async (req, res) => {
     }
 })
 
-exports.userHomeData = useAsync(async (req, res) => {
-
-    try {
-        const user = await ModelPerson.findOne({ _id: req.params.id });
-        let userInterest=[]
-        let userRecommend=[]
-        const allHost = await ModelPerson.find({ isHost: true });
-        if(user){
-
-            const alluserInterest = await MindCastUserInterest.find({ user_id: req.params.id });
-            const allInterests = await MindCastInterest.find();
-            const resources = await MindCastResource.find();
-            const recommendations = await MindCastRecommend.find();
-            
-
-            allInterests.forEach( interest => {
-                alluserInterest.forEach( async element => {
-                    if(interest._id==element.interest_id){
-
-                        let interestedResources=[]
-
-                        resources.forEach(aRes => {
-
-                            if(interest._id==aRes.interestID){
-                                
-                                interestedResources.push(aRes)
-                            }
-                        });
-
-                        let anInterest={interest, interestedResources }
-                        
-                        userInterest.push(anInterest)
-                    }
-                    
-                });
-               
-               
-                
-            });
-
-            recommendations.forEach(recommend=>{
-                userInterest.forEach( data => { 
-                    if(data.interest._id==recommend.interestID){
-                        data.interestedResources.forEach( resource => { 
-                            let body ={"interestID":data.interest._id, "interestName":data.interest.name,resource }
-                            userRecommend.push(body)
-                         });
-                        
-                    }
-                });
-            })
-            
-
-
-            let body={user,userInterest,allHost,userRecommend}
-
-
-            return res.json(utils.JParser('User Data fetch successfully', !!user, body));
-        }
-        
-    } catch (e) {
-        throw new errorHandle(e.message, 400)
-    }
-})
-
-
 exports.singleUser = useAsync(async (req, res) => {
 
     try {
@@ -177,29 +111,6 @@ exports.audit = useAsync(async (req, res) => {
 
 })
 
-exports.singleAudit = useAsync(async (req, res) => {
-
-    try {
-        const user = await MindCastAudit.findOne({ userID: req.params.id });
-        return res.json(utils.JParser('User audit fetch successfully', !!user, user));
-    } catch (e) {
-        throw new errorHandle(e.message, 400)
-    }
-})
-
-exports.deleteAudit = useAsync(async (req, res) => {
-    try {
-        if (!req.body.id) return res.status(402).json({ msg: 'provide the id ' })
-
-        await MindCastAudit.deleteOne({ _id: req.body.id })
-        return res.json(utils.JParser('Audit deleted successfully', true, []));
-
-        res.status(200).json("");
-    } catch (e) {
-        throw new errorHandle(e.message, 400)
-    }
-
-});
 
 exports.allUser = useAsync(async (req, res) => {
 
