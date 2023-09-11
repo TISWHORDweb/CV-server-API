@@ -164,6 +164,7 @@ exports.changePassword = useAsync(async (req, res) => {
 
 })
 
+
 // router.get("/:id", verify, async (req, res) => {
 
 //     let user = await ModelPerson.find({ _id: req.params.id })
