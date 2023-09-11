@@ -13,7 +13,16 @@ const CVWorkSchema=new mongoose.Schema({
     department:{
         type:String, 
     },
-    years:{
+    jobStatus:{
+        type:String, 
+    },
+    city:{
+        type:String, 
+    },
+    startDate:{
+        type:String,
+    },
+    endDate:{
         type:String,
     },
     notes:{
