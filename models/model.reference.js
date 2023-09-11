@@ -3,14 +3,11 @@ const mongoose = require('mongoose')
 const CVReferenceSchema=new mongoose.Schema({
     personId:{
         type:String, 
-    },
-    fullName:{
-        type:String,  
-    },
-    workPlace:{
+    }, 
+    company:{
         type:String, 
     },
-    designation:{
+    jobTitle:{
         type:String,  
     },
     email:{

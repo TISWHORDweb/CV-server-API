@@ -12,6 +12,8 @@ const { education, editEducation, singleEducation, allEducation, userEducation, 
 const { editLanguage, language, singleLanguage, allLanguage, userLanguage, deleteLanguage } = require('../controller/controller.language');
 const { editReference, reference, allReference, userReference, deleteReference, singleReference } = require('../controller/controller.reference');
 const { editSkill, skill, singleSkill, allSkill, userSkill, deleteSkill } = require('../controller/controller.skill');
+const { edithobby, hobby, singlehobby, allhobby, userhobby, deletehobby } = require('../controller/controller.hobby');
+
 const { deleteWork, userWork, allWork, singleWork, work, editWork } = require('../controller/controller.work');
 
 /**
@@ -64,6 +66,14 @@ router.get('/skill/:id', singleSkill);
 router.get('/skill/all', allSkill);
 router.get('/skill/user/:id', userSkill);
 router.delete('/skill/deletes', deleteSkill);
+
+//Hobby
+router.put('/hobby/edit', edithobby);
+router.post('/hobby', hobby);
+router.get('/hobby/:id', singlehobby);
+router.get('/hobby/all', allhobby);
+router.get('/hobby/user/:id', userhobby);
+router.delete('/hobby/deletes', deletehobby);
 
 //Work
 router.put('/work/edit', editWork);

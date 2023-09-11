@@ -4,7 +4,7 @@ const CVEducationSchema=new mongoose.Schema({
     personId:{
         type:String, 
     },
-    years:{
+    graduationDate:{
         type:String,  
     },
     school: {
@@ -16,7 +16,7 @@ const CVEducationSchema=new mongoose.Schema({
     department:{
         type:String, 
     },
-    grade:{
+    level:{
         type:String,  
     },
     notes: {
