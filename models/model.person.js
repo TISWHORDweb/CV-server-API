@@ -37,6 +37,9 @@ const CVPersonSchema=new mongoose.Schema({
     email:{
         type:String,
     },
+    workemail:{
+        type:String,
+    },
     address: {
         type:String,
     },
