@@ -63,7 +63,7 @@ exports.userSettings = useAsync(async (req, res) => {
         const id = req.params.id;
         const body = req.body
         await ModelPerson.updateOne({ _id: id }, body).then(async () => {
-            const user = await ModelPerson.find({ _id: id });
+            const user = await ModelPerson.findOne({ _id: id });
             return res.json(utils.JParser('Account Setup Successfully', !!user, user));
 
         })
