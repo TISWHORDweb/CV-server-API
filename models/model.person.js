@@ -25,6 +25,9 @@ const CVPersonSchema=new mongoose.Schema({
     jobTitle:{
         type:String,    
     },
+    birthday:{
+        type:String,    
+    },
     country:{
         type:String,    
     },
