@@ -22,7 +22,7 @@ const CVPersonSchema=new mongoose.Schema({
     nationality:{
         type:String,    
     },
-    jobTitle:{
+    jobtitle:{
         type:String,    
     },
     birthday:{
@@ -43,7 +43,7 @@ const CVPersonSchema=new mongoose.Schema({
     email:{
         type:String,
     },
-    workEmail:{
+    workemail:{
         type:String,
     },
     address: {
